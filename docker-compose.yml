@@ -1,10 +1,10 @@
 # Ollama with ipex (Intel iGPU acceleration) and
 services:
-  ipex_ollama:
+  ollama:
     image: ipex_ollama:0.1.1
     build:
       dockerfile: ./Dockerfile
-    container_name: ipex_ollama
+    container_name: ollama
     healthcheck:
       test: ollama --version || exit 1
       interval: 60s
@@ -44,4 +44,4 @@ services:
         condition: service_started
         restart: true
     environment:
-      OLLAMA_BASE_URL: "http://ipex_ollama:11434"
+      OLLAMA_BASE_URL: "http://ollama:11434"
