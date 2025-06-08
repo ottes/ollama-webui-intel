@@ -40,7 +40,7 @@ services:
       - ./data/ollama-webui:/app/backend/data
     restart: always
     depends_on:
-      ipex_ollama:
+      ollama:
         condition: service_started
         restart: true
     environment:
